@@ -1,0 +1,18 @@
+## YAML Templatesss
+default: -p pretty -p ci -p acesso -p firefox -p html -p json
+
+pretty: --format pretty
+ci:  --format progress
+
+acesso: AMBIENTE=acesso
+
+
+firefox: BROWSER=firefox
+
+chrome: BROWSER=chrome
+chrome_headless: BROWSER=chrome_headless
+
+html:  --format html --out=results/report.html
+json:  --format json --out=results/report.json
+
+
