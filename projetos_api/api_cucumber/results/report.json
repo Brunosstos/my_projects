@@ -1,0 +1,278 @@
+[
+  {
+    "uri": "features/specs/chamadas_api.feature",
+    "id": "realizando-requisões-api-contato",
+    "keyword": "Funcionalidade",
+    "name": "Realizando requisões API Contato",
+    "description": "    Como usuário do sistema\n    Quero realizar várias requisões com diferentes metodos\n    Para criar, obter, incluir e deletar informações",
+    "line": 3,
+    "tags": [
+      {
+        "name": "@Contatos",
+        "line": 2
+      }
+    ],
+    "elements": [
+      {
+        "id": "realizando-requisões-api-contato;cadastrar-um-usuário",
+        "keyword": "Cenario",
+        "name": "Cadastrar um Usuário",
+        "description": "",
+        "line": 9,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Contatos",
+            "line": 2
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24900
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "realizar uma requisão",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/post_api_step.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26425148700
+            }
+          },
+          {
+            "keyword": "Então ",
+            "name": "o retorno da requisão deve ser 201",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/post_api_step.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35833700
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o nome e email devem ser validados",
+            "line": 12,
+            "output": [
+              "Id    =>  773",
+              "Nome  =>  Tracie",
+              "Email =>  roosevelt_swift@fisher.org"
+            ],
+            "match": {
+              "location": "features/step_definitions/post_api_step.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 607400
+            }
+          }
+        ]
+      },
+      {
+        "id": "realizando-requisões-api-contato;alterando-um-usuário",
+        "keyword": "Cenario",
+        "name": "Alterando um Usuário",
+        "description": "",
+        "line": 14,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Contatos",
+            "line": 2
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26100
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "realizar uma requisão Alterando o Contato",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/put_api_step.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1554522200
+            }
+          },
+          {
+            "keyword": "Então ",
+            "name": "o retorno da requisão deve ser 200",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/post_api_step.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80700
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "API irá retornar os dados alterado do Contato",
+            "line": 17,
+            "output": [
+              "Email cadastrado => roosevelt_swift@fisher.org",
+              "Email alterado   => charles.bruen@welch.biz"
+            ],
+            "match": {
+              "location": "features/step_definitions/put_api_step.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 210800
+            }
+          }
+        ]
+      },
+      {
+        "id": "realizando-requisões-api-contato;consultar-um-usuário",
+        "keyword": "Cenario",
+        "name": "Consultar um Usuário",
+        "description": "",
+        "line": 19,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Contatos",
+            "line": 2
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12600
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "realizar uma requisão passando o ID do Contato",
+            "line": 20,
+            "match": {
+              "location": "features/step_definitions/get_api_step.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 926316300
+            }
+          },
+          {
+            "keyword": "Então ",
+            "name": "o retorno da requisão deve ser 200",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/post_api_step.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60200
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "API irá retornar os dados do Contato",
+            "line": 22,
+            "output": [
+              "Id            => 773",
+              "Nome          => Tracie",
+              "Sobrenome     => Santos",
+              "Email         => charles.bruen@welch.biz",
+              "Idade         => 28",
+              "Telefone      => (11)981159575",
+              "Endereço      => Av Georg Estman",
+              "Estado        => São Paulo",
+              "Cidade        => São Paulo"
+            ],
+            "match": {
+              "location": "features/step_definitions/get_api_step.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 126100
+            }
+          }
+        ]
+      },
+      {
+        "id": "realizando-requisões-api-contato;deletar-um-usuário",
+        "keyword": "Cenario",
+        "name": "Deletar um Usuário",
+        "description": "",
+        "line": 24,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Contatos",
+            "line": 2
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13700
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "realizar uma requisão deletando o Contato",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/del_api_step.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1206532600
+            }
+          },
+          {
+            "keyword": "Então ",
+            "name": "o retorno da requisão deve ser 204",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/post_api_step.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 82400
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
